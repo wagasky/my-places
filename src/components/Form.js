@@ -6,7 +6,8 @@ class Form extends Component {
 
     this.state = {
       lat: '',
-      lng: ''
+      lng: '',
+      enabled: true
     }
   }
   submitForm(e, data) {
@@ -24,6 +25,8 @@ class Form extends Component {
   enableSubmit() {
     const latCheck = this.validateLatitude(this.state.lat)
     const lngCheck = this.validateLongitude(this.state.lng)
+    const enabled = (latCheck && lngCheck) ? false : true ;
+    this.setState({ enabled })
   }
 
   validateLatitude(lat) {
@@ -72,6 +75,7 @@ class Form extends Component {
 
         </label>
         <button
+          disabled={this.state.enabled}
           type="submit"
           onClick={(e) => this.submitForm(e, {
             name: this.name.value,
