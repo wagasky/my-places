@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { saveLocation } from '../actions/locationActions'
 import Form from '../components/Form'
 
 const mapStateToProps = (state) => {

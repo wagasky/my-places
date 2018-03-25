@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Form extends Component {
   submitForm(e, data) {
     e.preventDefault();
@@ -34,7 +33,8 @@ class Form extends Component {
           onClick={(e) => this.submitForm(e, {
             name: this.name.value,
             lat: this.lat.value,
-            lng: this.lng.value
+            lng: this.lng.value,
+            id: Date.now()
           })}
         >
             Save
@@ -43,6 +43,5 @@ class Form extends Component {
     );
   }
 }
-
 
 export default Form;
