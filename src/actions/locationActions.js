@@ -32,4 +32,8 @@ const postLocation = (data) => {
   }
 }
 
+const updateMapCenter = () => {
+  
+}
+
 export { fetchAllLocations, postLocation }
