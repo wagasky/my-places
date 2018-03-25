@@ -41,6 +41,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
+app.post('/locations', (request, response) => {
+  const location = request.body;
+  const id = Date.now();
+  const { name, lat, lng } = location;
+
+  if(!location) {
+    return response.status(422).send({
+      error: 'No location provided'
+    });
+  } else {
+    app.locals.locations.push({ id, name, lat, lng });
+    return response.status(201).json({ id, name })
+  }
+})
+
 const portNumber = process.env.PORT || 3001;
 
 app.listen(portNumber, () => {
