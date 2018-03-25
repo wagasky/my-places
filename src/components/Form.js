@@ -14,6 +14,7 @@ class Form extends Component {
     e.preventDefault();
     // this.props.saveLocation(data);
     this.props.postLocation(data)
+    this.props.fetchAllLocations()
   }
 
   setCoordinates(e) {

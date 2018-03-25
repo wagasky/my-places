@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { saveLocation } from '../actions/locationActions'
 import Form from '../components/Form'
 import { bindActionCreators } from 'redux';
-import { postLocation } from '../actions/locationActions';
+import { postLocation, fetchAllLocations } from '../actions/locationActions';
 
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ postLocation }, dispatch);
+  return bindActionCreators({ postLocation, fetchAllLocations }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
