@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 
 app.post('/locations', (request, response) => {
   const location = request.body;
-  // const id = Date.now();
+  const id = Date.now();
   const { name, lat, lng } = location;
 
   if(!location) {
@@ -51,8 +51,8 @@ app.post('/locations', (request, response) => {
       error: 'No location provided'
     });
   } else {
-    app.locals.locations.push({ name, lat, lng });
-    return response.status(201).json({ name })
+    app.locals.locations.push({ id, name, lat, lng });
+    return response.status(201).json({ id, name })
   }
 })
 

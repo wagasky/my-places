@@ -12,7 +12,6 @@ class Form extends Component {
   }
   submitForm(e, data) {
     e.preventDefault();
-    // this.props.saveLocation(data);
     this.props.postLocation(data)
     this.props.fetchAllLocations()
   }
@@ -83,7 +82,6 @@ class Form extends Component {
             name: this.name.value,
             lat: this.lat.value,
             lng: this.lng.value,
-            id: Date.now()
           })}
         >
             Save
