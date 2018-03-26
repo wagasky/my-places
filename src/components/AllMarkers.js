@@ -50,7 +50,7 @@ class AllMarkers extends Component {
     return (
       <div className="paths-container">
         {markerArray}
-      <Polygon color="blue" positions={latlngs} />
+      <Polygon color="green" positions={latlngs} />
       </div>
     );
   }

@@ -7,7 +7,7 @@ class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      center: [20, -110]
+      center: [ 39.742043, -104.991531 ]
     }
   }
 
