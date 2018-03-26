@@ -1,18 +1,24 @@
 /*eslint-disable no-unused-vars*/
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MapMarker from './Marker'
+import MapMarker from './Marker';
+import { Polygon } from "react-leaflet";
 
 class AllMarkers extends Component {
 
   createPolygon(e) {
-    const latlng = e.latlng
-    const lat = latlng.lat
-    const lng = latlng.lng
+    const { lat, lng } = e.latlng
     console.log(lat, lng)
   }
 
   render() {
+    const latlngs = [
+      [[37, -109.05],
+      [41, -109.03],
+      [41, -102.05],
+      [37, -102.04]]
+    ]
+
     const markerArray = this.props.locations.map((marker, i) => {
       return (
         <MapMarker
@@ -27,6 +33,7 @@ class AllMarkers extends Component {
     return (
       <div className="paths-container">
         {markerArray}
+      <Polygon color="blue" positions={latlngs} />
       </div>
     );
   }
