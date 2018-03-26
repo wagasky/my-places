@@ -40,7 +40,7 @@ class LeafletMap extends Component {
           center={ center || this.state.center }
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
-          onClick={this.onClick}
+          onClick={() => this.onClick()}
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
