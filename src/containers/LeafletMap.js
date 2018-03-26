@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, ZoomControl } from 'react-leaflet';
+import { Map, TileLayer, ZoomControl, WMSTileLayer } from 'react-leaflet';
 import AllMarkers from './AllMarkers';
 // import { connect } from 'react-redux';
 
@@ -7,7 +7,8 @@ class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      center: [ 39.742043, -104.991531 ]
+      center: [ 39.742043, -104.991531 ],
+      bluemarble: false
     }
   }
 
@@ -22,6 +23,13 @@ class LeafletMap extends Component {
     }
   }
 
+  onClick() {
+    this.setState({
+      bluemarble: !this.state.bluemarble,
+    })
+  }
+
+
   render() {
     const center  = this.adjustCenter()
     return (
@@ -32,12 +40,17 @@ class LeafletMap extends Component {
           center={ center || this.state.center }
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
+          onClick={this.onClick}
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
             attribution='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             maxZoom={10}
             minZoom={2}
+          />
+          <WMSTileLayer
+            layers={this.state.bluemarble ? 'nasa:bluemarble' : 'ne:ne'}
+            url="https://demo.boundlessgeo.com/geoserver/ows"
           />
           <ZoomControl
             position="bottomright"
