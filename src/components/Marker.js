@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import { Marker, Tooltip } from 'react-leaflet';
 import L from 'leaflet'
-import tealdot from '../imgs/tealdot.svg'
+import leaf from '../imgs/leaf-green.png'
+import shadow from '../imgs/leaf-shadow.png'
 
 class MapMarker extends Component {
 
   render() {
     let icon = L.icon({
-      iconUrl: tealdot,
-      iconSize: [15, 15]
+      iconUrl: leaf,
+      shadowUrl: shadow,
+
+      iconSize:     [38, 95], 
+      shadowSize:   [50, 64], 
+      iconAnchor:   [22, 94], 
+      shadowAnchor: [4, 62],  
+      popupAnchor:  [-3, -76] 
     });
+
+    const handleClick = this.props.handleClick
 
     return (
       <div className="marker-container">
           <Marker
             position={this.props.location}
             icon={icon}
+            onClick={handleClick}
           >
             <Tooltip
               sticky

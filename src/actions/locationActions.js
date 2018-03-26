@@ -32,4 +32,5 @@ const postLocation = (data) => {
   }
 }
 
+
 export { fetchAllLocations, postLocation }
