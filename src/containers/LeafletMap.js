@@ -10,7 +10,7 @@ class LeafletMap extends Component {
 
     };
   }
-
+  
   adjustCenter() {
     if (this.props.locations.length) {
       const i = this.props.locations.length - 1;

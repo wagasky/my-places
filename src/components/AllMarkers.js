@@ -7,6 +7,7 @@ class AllMarkers extends Component {
 
   createPolygon(e) {
     console.log('click', e)
+    console.log(this.props.polygons)
   }
 
   render() {

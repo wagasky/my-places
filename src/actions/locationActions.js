@@ -7,6 +7,13 @@ const storeAllLocations = (locations) => {
   };
 };
 
+const storePolygon = (locations) => {
+  return {
+    type:'STORE_POLYGON', 
+    data: locations.locations
+  }
+}
+
 const fetchAllLocations = () => {
   return (dispatch) => {
     return fetch('/locations', {

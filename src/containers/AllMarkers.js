@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import AllMarkers from '../components/AllMarkers'
 
 const mapStateToProps = (state) => {
-  return { locations: state.Locations.data }
+  return { 
+    locations: state.Locations.data,
+    polygons: state.Polygons.data
+   }
 }
 
 const mapDispatchToProps = (dispatch) => {

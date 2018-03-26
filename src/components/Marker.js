@@ -5,10 +5,6 @@ import tealdot from '../imgs/tealdot.svg'
 
 class MapMarker extends Component {
 
-  handleClick() {
-    console.log('click')
-  }
-
   render() {
     let icon = L.icon({
       iconUrl: tealdot,
@@ -16,7 +12,7 @@ class MapMarker extends Component {
     });
 
     const handleClick = this.props.handleClick
-    
+
     return (
       <div className="marker-container">
           <Marker
