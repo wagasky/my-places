@@ -1,7 +1,8 @@
 /*eslint-disable no-unused-vars*/
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AllMarkers from '../components/AllMarkers'
+import AllMarkers from '../components/AllMarkers';
+import { storePolygon } from '../actions/polygonActions';
 
 const mapStateToProps = (state) => {
   return { 
@@ -10,8 +11,8 @@ const mapStateToProps = (state) => {
    }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {}
-}
+const mapDispatchToProps = (dispatch) => ({
+  storePolygon: coordinates => dispatch(storePolygon(coordinates)),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllMarkers);
