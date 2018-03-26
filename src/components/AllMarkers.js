@@ -9,17 +9,15 @@ class AllMarkers extends Component {
 
   createPolygon(e) {
     const { lat, lng } = e.latlng
-    const { storePolygon } = this.props
-    this.props.storePolygon([lat, lng])
+    const newLatlng = [ lat, lng ]
+    const { storePolygon, polygons } = this.props
+
+    this.props.storePolygon(newLatlng)
+
   }
 
   render() {
-    const latlngs = [
-      [[37, -109.05],
-      [41, -109.03],
-      [41, -102.05],
-      [37, -102.04]]
-    ]
+    const latlngs = this.props.polygons
 
     const markerArray = this.props.locations.map((marker, i) => {
       return (
