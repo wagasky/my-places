@@ -1,6 +1,5 @@
 # Concept3D Interview : The Technical Challenge
 
-### Overview
 
 I completed this challenge for Concept3D. The challenge took me about ~6-7 hours and I spread that out over the course of the weekend. I completed all of the required features:
 
@@ -42,7 +41,7 @@ And they can toggle to this view with a click:
 ![image](https://user-images.githubusercontent.com/24358415/37892587-81903acc-3095-11e8-9da0-f5ec73b5499d.png)
 
 
-### Intructions
+### Setup Intructions
 
 1. Clone this repo to your own machine.
 2. cd into the repo
@@ -57,4 +56,4 @@ This project was made with Create-React-App.
 
 ### Next Steps:
 
-I ran out of time to test the React elements and the new server endpoints in Javascript. I'd like to do that with Jest and Enzyme - a handy library for testing React. I'd like to keep playing around with leaflet and develop a view of the map where you can select a pane and see the geographic name of that pane in the tooltip. I'd also like to refactor out unused redux elements, move stateless containers into the components folder, and refactor all of the code I wrote to be more declarative and bried whenever possible.
+I'd like to test the React functionality and the new endpoints in the server with both Jest and Enzyme (a handy library for testing React UI elements with snapshot). I'd like to keep playing around with leaflet and develop a view of the map where you can select a pane and see the geographic name of that pane in the tooltip. I'd also like to refactor out unused redux elements, move stateless containers into the components folder, and refactor all of the code I wrote to be more declarative and brief whenever possible.
