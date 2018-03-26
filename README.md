@@ -13,11 +13,11 @@ I completed this challenge for Concept3D. The challenge took me about ~6-7 hours
   - Use the React-Leaflet library to add your polygon
   - Use Redux to update state
 
-And most of the bonus features:
+And several bonus features:
 
 - When adding a new marker, the center of the map will be set to the [lat, lng] of the new marker.
-- Add some other fun features with the React-Leaflet library. Be creative!
-
+- Add some other fun features with the React-Leaflet library.
+- Markers persist server side within app.locals on page refresh
 
 
 ### Bonus additions:
