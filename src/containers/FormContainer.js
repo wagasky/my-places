@@ -4,7 +4,6 @@ import Form from '../components/Form'
 import { bindActionCreators } from 'redux';
 import { postLocation, fetchAllLocations } from '../actions/locationActions';
 
-
 const mapStateToProps = (state) => {
   return {};
 };

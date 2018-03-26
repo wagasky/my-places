@@ -6,8 +6,10 @@ import MapMarker from './Marker'
 class AllMarkers extends Component {
 
   createPolygon(e) {
-    console.log('click', e)
-    console.log(this.props.polygons)
+    const latlng = e.latlng
+    const lat = latlng.lat
+    const lng = latlng.lng
+    console.log(lat, lng)
   }
 
   render() {
