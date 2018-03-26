@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AllMarkers from '../components/AllMarkers';
-import { storePolygon } from '../actions/polygonActions';
+import { storePolygon, removeCoordinates } from '../actions/polygonActions';
 
 const mapStateToProps = (state) => {
   return { 
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   storePolygon: coordinates => dispatch(storePolygon(coordinates)),
+  removeCoordinates: array => dispatch(removeCoordinates(array))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllMarkers);

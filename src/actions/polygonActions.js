@@ -5,4 +5,11 @@ const storePolygon = (coordinates) => {
   }
 }
 
-export { storePolygon }
+const removeCoordinates = (newArray) => {
+  return {
+    type:'REMOVE_COORDINATES', 
+    data: newArray
+  }
+}
+
+export { storePolygon, removeCoordinates }

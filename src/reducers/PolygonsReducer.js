@@ -8,6 +8,10 @@ const Polygons = (state = initialState, action) => {
       return Object.assign({}, state, {
         data: [action.data, ...state.data],
       });
+    case 'REMOVE_COORDINATES':
+      return { 
+        data: action.data 
+      };
     default:
       return state;
   }
